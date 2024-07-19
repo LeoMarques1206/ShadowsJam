@@ -22,6 +22,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if(!PotEffect)
         {
+            animator.SetBool("PotEffect", false);
             rb.bodyType = RigidbodyType2D.Dynamic;
             horizontal = Input.GetAxisRaw("Horizontal");
 
@@ -41,6 +42,7 @@ public class PlayerMovement : MonoBehaviour
         } else if (PotEffect)
         {
             rb.bodyType = RigidbodyType2D.Static;
+            animator.SetBool("PotEffect", true);
         }
         
     }
